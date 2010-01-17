@@ -12,7 +12,8 @@ using namespace std;
 
 // toInt()
 // toStr()
-// vector <string> split(const string _s, const string del)
+// vector <int> split(const string _s, const string del = " ");
+// vector <string> splits(const string _s, const string del = " ");
 // string chomp(const string s)
 // int gcd(int _a, int _b)
 // double lcm(int _a, int _b)
@@ -29,8 +30,25 @@ using namespace std;
 int toInt(string s) {int r = 0; istringstream ss(s); ss >> r; return r;}
 string toStr(int n) {ostringstream ss; ss << n; return ss.str();}
 
-vector <string> split(const string _s, const string del)
-{
+vector <int> split(const string _s, const string del) {
+  vector <int> ret;
+  string s = _s;
+
+  while (!s.empty())
+    {
+      size_t pos = s.find(del);
+      string sub = "";
+      sub = s.substr(0, pos);
+      ret.push_back(toInt(sub));
+      if (pos != string::npos)
+	pos += del.size();
+      s.erase(0, pos);
+    }
+
+  return ret;
+}
+
+vector <string> splits(const string _s, const string del) {
   vector <string> ret;
   string s = _s;
 
@@ -41,7 +59,7 @@ vector <string> split(const string _s, const string del)
       sub = s.substr(0, pos);
       ret.push_back(sub);
       if (pos != string::npos)
-	pos += del.size();
+        pos += del.size();
       s.erase(0, pos);
     }
 
@@ -64,17 +82,15 @@ string chomp(const string s)
   return ret;
 }
 
-int gcd(int _a, int _b)
-{
+int gcd(const int _a, const int _b) {
   int a = max(_a, _b);
   int b = min(_a, _b);
 
-  while (b)
-    {
-      int tmp = a % b;
-      a = b;
-      b = tmp;
-    }
+  while (b) {
+    int tmp = a % b;
+    a = b;
+    b = tmp;
+  }
 
   return a;
 }
@@ -162,10 +178,10 @@ vector <vector <int> > combinations::get()
 
 //////////////////////////////////////////////////////////
 
-int combination(int n, int r)
+long long combination(int n, int r)
 {
   int i, j;
-  int result[r+1], tmp[r+1];
+  long long result[r+1], tmp[r+1];
 
   for (i=0; i<=r; i++)
     {
