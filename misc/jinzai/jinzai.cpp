@@ -27,14 +27,14 @@ double getrusageSec() {
 vector <string> run(vector <string> input)
 {
   vector <string> ret = input;
-  queue <vector <pair <int, int> > > q;
-  int visited[input.size()][input[0].size()];
+  queue <pair <int, int> > q;
+  int come_from[input.size()][input[0].size()][2];
   int startx = 0, starty = 0, goalx = 0, goaly = 0;
   int dirx[4] = {1, 0, -1, 0};
   int diry[4] = {0, 1, 0, -1};
   vector <pair <int, int> > path;
 
-  memset(visited, 0, sizeof(visited));
+  memset(come_from, -1, sizeof(come_from));
 
   for (int i=0; i<input.size(); i++)
     for (int j=0; j<input[0].size(); j++)
@@ -43,35 +43,37 @@ vector <string> run(vector <string> input)
       else if (input[i][j] == 'G')
         goalx = i, goaly = j;
 
-  q.push(vector <pair <int, int> > (1, make_pair(startx, starty)));
+  q.push(make_pair(startx, starty));
 
   while (!q.empty()) {
-    vector <pair <int, int> > cur = q.front();
+    pair <int, int> cur = q.front();
     q.pop();
-    int curx = cur[cur.size()-1].first, cury = cur[cur.size()-1].second;
-    visited[curx][cury] = 1;
+    int curx = cur.first, cury = cur.second;
 
-    if (curx == goalx && cury == goaly) {
-      path = cur;
+    if (curx == goalx && cury == goaly)
       break;
-    }
 
     for (int i=0; i<4; i++) {
       int nextx = curx + dirx[i];
       int nexty = cury + diry[i];
 
       if (0 <= nextx && nextx < input.size() && 0 <= nexty && nexty < input[0].size() &&
-          visited[nextx][nexty] == 0 && (input[nextx][nexty] != '*' && input[nextx][nexty] != 'S')) {
-        vector <pair <int, int> > tmp = cur;
-        tmp.push_back(make_pair(nextx, nexty));
-        q.push(tmp);
-        visited[nextx][nexty] = 1;
+          come_from[nextx][nexty][0] == -1 && (input[nextx][nexty] != '*' && input[nextx][nexty] != 'S')) {
+        q.push(make_pair(nextx, nexty));
+        come_from[nextx][nexty][0] = curx;
+        come_from[nextx][nexty][1] = cury;
       }
     }
   }
 
-  for (int i=0; i<path.size(); i++)
-    ret[path[i].first][path[i].second] = '$';
+  int x = goalx, y = goaly;
+  while (1) {
+    if (x == -1) break;
+    if (ret[x][y] == ' ')
+      ret[x][y] = '$';
+    x = come_from[x][y][0];
+    y = come_from[x][y][1];
+  }
 
   return ret;
 }

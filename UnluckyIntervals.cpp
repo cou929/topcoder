@@ -23,14 +23,13 @@ public:
 
     luckySet.push_back(0);
     sort(luckySet.begin(), luckySet.end());
-    int N = luckySet.size();
-
     int counter[luckySet[luckySet.size()-1]+1];
     memset(counter, 0, sizeof(counter));
 
-    for (int i=0; i<N-1; i++) {
+
+    for (int i=0; i<luckySet.size()-1; i++) {
       int left = luckySet[i] + 1, right = luckySet[i+1] - 1;
-      cout << left << ", " << right << endl;
+      //      cout << left << ", " << right << endl;
       int len = right - left + 1;
       for (int j=0; j<=len/2; j++) {
         int c = len - j - 1;
@@ -41,20 +40,22 @@ public:
       }
     }
 
-    for (int i=1; i<=N; i++)
+    for (int i=1; i<=luckySet[luckySet.size()-1]; i++)
       s.push_back(make_pair(counter[i], i));
     sort(s.begin(), s.end());
     
-    for (int i=0; i<s.size(); i++)
-      cout << s[i].first << " " << s[i].second << endl;
+    //    for (int i=0; i<s.size(); i++)
+    //      cout << s[i].first << " " << s[i].second << endl;
 
     int lim = min(n, (int)s.size());
     for (int i=0; i<lim; i++)
       ret.push_back(s[i].second);
 
-    if (ret.size() < n)
-      for (int i=0; i<n-ret.size(); i++)
+    if (ret.size() < n) {
+      int N = n - ret.size();
+      for (int i=0; i<N; i++)
         ret.push_back(luckySet[luckySet.size()-1]+i+1);
+    }
     
     return ret;
   }
@@ -77,6 +78,6 @@ private:
 // BEGIN CUT HERE
 int main() {
 UnluckyIntervals ___test;
-___test.run_test(0);
+___test.run_test(-1);
 }
 // END CUT HERE 
