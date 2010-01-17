@@ -32,7 +32,6 @@ vector <string> run(vector <string> input)
   int startx = 0, starty = 0, goalx = 0, goaly = 0;
   int dirx[4] = {1, 0, -1, 0};
   int diry[4] = {0, 1, 0, -1};
-  vector <pair <int, int> > path;
 
   memset(come_from, -1, sizeof(come_from));
 
