@@ -1,0 +1,181 @@
+<HTML>
+
+<HEAD>
+    <TITLE>
+        TZTester Home Page
+    </TITLE>
+</HEAD>
+
+<BODY>
+    <CENTER>
+        <H1>TZTester</H1>
+    </CENTER>
+
+    <P>
+    TZTester is a CodeProcessor plug-in that automatically extracts the examples
+    test cases given in the problem description and generates C++ code that runs
+    the test cases.  Programmers no longer need to manually type in the test
+    cases in the test dialog box.  The plug-in is designed to work with either
+    PopsEdit or FileEdit.  If you use other editors, you may need to adapt
+    accordingly.
+    </P>
+
+    <P>
+    My TopCoder handle is "TangentZ".  My email is <A HREF="mailto:tangentz[at]hotmail.com">tangentz[at]hotmail.com</A>
+    </P>
+
+    <UL>
+        <LI><A HREF="#Installation">Installation</A>
+        <LI><A HREF="#Template">Template</A>
+        <LI><A HREF="#Usage">Usage</A>
+        <LI><A HREF="#History">History</A>
+    </UL>
+
+    <HR>
+
+    <P>
+    <A NAME="Installation">
+        <H2>Installation</H2>
+    </A>
+
+    <PRE>
+    0. Download CodeProcessor 1.2 (or higher) if not already
+    1. Follow the installation instructions of CodeProcessor
+    2. Add TZTester.jar (the location of the JAR) to the ClassPath
+    3. Use "popsedit.EntryPoint" or "fileedit.EntryPoint" (or another editor that you use) as the Editor
+    4. Use "tangentz.TZTester" as CodeProcessor name
+    5. Restart the Contest Arena applet
+    6. Click on "Verify" to make sure all 3 methods are found
+    7. Configure your editor template (See <A HREF="#Template">Template Examples</A>)
+    8. Go to any practice room and open a problem to make sure everything is in place
+    9. Happy coding!
+    </PRE>
+    </P>
+
+    <HR>
+
+    <P>
+    <A NAME="Template">
+        <H2>Template Examples</H2>
+    </A>
+    </P>
+
+    <P>
+    TZTester defines two internal tags to determine where to put the generated code.
+    <P>
+
+    <UL>
+        <LI>$RUNTEST$ - This should be placed somewhere inside the method that the system
+            tester calss.  The tag generates a line of code that drives the whole testing engine
+
+        <LI>$TESTCODE$ - This should be placed within the class but outside the method you
+            are writing.  This tag generates the code that contains arguments from all the given examples.
+    </UL>
+
+    <P>
+    If you use PopsEdit, you may use this template:
+    </P>
+
+    <PRE>
+    class $CLASSNAME$
+        {
+        public:
+        $RC$ $METHODNAME$($METHODPARMS$)
+            {
+            $RUNTEST$
+            $CARETPOSITION$
+            }
+        // end of $METHODNAME$
+
+        $TESTCODE$
+        };
+    // end of $CLASSNAME$
+    </PRE>
+
+    <P>
+    If you use FileEdit, you may use this template instead (thanks to pewloo):
+    </P>
+
+    <PRE>
+    class $CLASSNAME$
+        { 
+        public: 
+        $RC$ $METHODNAME$($METHODPARMS$) 
+            { 
+            $CARETPOSITION$ 
+            } 
+        $TESTCODE$ 
+        }; 
+
+    // BEGIN CUT HERE 
+    int main()
+        {
+        $CLASSNAME$ ___test; 
+        ___test.run_test(-1); 
+        } 
+    // END CUT HERE 
+    </PRE>
+
+    <P>
+    Notice that run_test() is called directly in main() and there is no need for the $RUNTEST$ tag.
+    </P>
+
+    <HR>
+
+    <P>
+    <A NAME="Usage">
+        <H2>Usage</H2>
+    </A>
+    </P>
+
+    <P>
+    TZTester generates one public member function and several private member functions for testing purposes.
+    </P>
+
+    <UL>
+        <LI><B>run_test</B>(int <I>Case</I>) - This is the test driver function.  The <I>Case</I>
+            argument controls which test case to run (0,1,2,3...etc).  Use -1 if you want all cases
+            to be run (the default).  It is <I>public</I>.
+
+        <LI><B>verify_case</B>(int <I>Case</I>) - This function compares the expected and received
+            results and outputs the appropriate diagnostics to <B>cerr</B>.  It is <I>private</I>.
+
+        <LI><B>test_case_0</B>(), <B>test_case_1</B>(), <B>test_case_2</B>()...etc - These correspond
+            to the example test cases.  They are <I>private</I>.
+    </UL>
+
+    <P>
+    Keep in mind that all test cases are run from within the function that system tester uses.
+    A local static variable is used to prevent infinite recursion (if using PopsEdit).  If you
+    find that all test cases cannot run within the 8 second time limit, you may want to run
+    each test individually by changing the argument to <B>run_test</B>().
+    </P>
+
+    <P>
+    Also, TZTester does no do any "code cutting".  You probably want to manually cut out the test
+    code before submitting to the Contest Applet.  Note that if TZTester did any "code cutting",
+    then the Contest Applet will never see the test code, rendering it useless to PopsEdit users.
+    </P>
+
+    <HR>
+
+    <P>
+    <A NAME="History">
+        <H2>History</H2>
+    </A>
+    </P>
+
+    <PRE>
+    [Version 1.01 - 25 Feb 2003]
+
+    - Made run_test() a public member function (suggestion from pewloo)
+    - Changed to use FileEdit cut tags
+
+    [Version 1.00 - 18 Feb 2003]
+
+    - Initial Version
+    - Tested with PopsEdit and problems from SRM 120+
+    </PRE>
+</BODY>
+
+</HTML>

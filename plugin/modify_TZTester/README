@@ -1,0 +1,8 @@
+I'm trying to modify TZTester.
+
+- build/                  main working directory
+- CFLCustom2-TZTester/    I've refered this TZT, 
+                          from http://topcoder.g.hatena.ne.jp/cafelier/20081203/1228315218
+- Petr/                   I've also refered this Petr's modification,
+                          from http://petr-mitrichev.blogspot.com/2008/10/screencast-and-challenging.html
+

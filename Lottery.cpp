@@ -15,18 +15,18 @@
 #include <queue>
 #include <stack>
 using namespace std;
-class BinaryCode {
-   public:
-   vector <string> decode(string message) {
-      vector <string> ret;
+class Lottery {
+public:
+  vector <string> sortByOdds(vector <string> rules) {
+    vector <string> ret;
 
-      return ret;
+    return ret;
   }
-   $TESTCODE$
+  $TESTCODE$
 };
 // BEGIN CUT HERE
 int main() {
-BinaryCode ___test;
+Lottery ___test;
 ___test.run_test(-1);
 }
 // END CUT HERE 

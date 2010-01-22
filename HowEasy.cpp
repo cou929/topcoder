@@ -15,18 +15,18 @@
 #include <queue>
 #include <stack>
 using namespace std;
-class BinaryCode {
+class HowEasy {
    public:
-   vector <string> decode(string message) {
-      vector <string> ret;
+   int pointVal(string param0) {
+      int ret;
 
       return ret;
   }
-   $TESTCODE$
+   // *** WARNING *** No test cases defined for this problem
 };
 // BEGIN CUT HERE
 int main() {
-BinaryCode ___test;
+HowEasy ___test;
 ___test.run_test(-1);
 }
 // END CUT HERE 
