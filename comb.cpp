@@ -25,7 +25,7 @@ using namespace std;
 // class allCombination
 // factor()   : prime factorization by trial division method
 // generatePrimes(int maxi)    : generate prime numbers smaller than maxi and return result as vector <int>. This requires isPrime(). Using Sleve of Eratosthenes.
-// gen_primes()    : generate prime numbers for arry
+// gen_primes()    : generate prime numbers for array
 
 int toInt(string s) {int r = 0; istringstream ss(s); ss >> r; return r;}
 string toStr(int n) {ostringstream ss; ss << n; return ss.str();}
@@ -183,24 +183,22 @@ long long combination(int n, int r)
   int i, j;
   long long result[r+1], tmp[r+1];
 
-  for (i=0; i<=r; i++)
-    {
-      result[i] = 0;
-      tmp[i] = 0;
-    }
+  for (i=0; i<=r; i++) {
+    result[i] = 0;
+    tmp[i] = 0;
+  }
 
   result[0] = 1;
 
-  for (i=1; i<=n; i++)
-    {
-      tmp[0] = 1;
+  for (i=1; i<=n; i++) {
+    tmp[0] = 1;
 
-      for (j=1; j<=r; j++)
-	tmp[j] = result[j-1] + result[j];
+    for (j=1; j<=r; j++)
+      tmp[j] = result[j-1] + result[j];
 
-      for (j=0; j<=r; j++)
-	result[j] = tmp[j];
-    }
+    for (j=0; j<=r; j++)
+      result[j] = tmp[j];
+  }
 
   return result[r];
 }

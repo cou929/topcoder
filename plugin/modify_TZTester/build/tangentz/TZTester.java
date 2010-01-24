@@ -163,7 +163,7 @@ public class TZTester
         Code.append("\tvoid run_test(int Case) { ");
 
         // Check which case should be called
-        for (I = 0; I < Cases.length+1; ++I)
+        for (I = 0; I < Cases.length+2; ++I)  // add two cases
             Code.append("\n\tif ((Case == -1) || (Case == " + I + ")) test_case_" + I + "();");
         // next
 
@@ -182,7 +182,9 @@ public class TZTester
             generate_test_case(I, Code, ParamTypes, ReturnType, Cases[I]);
         // next
 
-        generate_test_case(I++, Code, ParamTypes, ReturnType, Cases[0]);
+        // append additional two test cases, contents are same to case #0
+        generate_test_case(I, Code, ParamTypes, ReturnType, Cases[0]);
+        generate_test_case(I+1, Code, ParamTypes, ReturnType, Cases[0]);
 
         // Insert the cut tags
         Code.insert(0, k_BEGINCUT);
@@ -289,4 +291,3 @@ public class TZTester
     // end of generate_parameter
     }
 // end of TZTester
-
