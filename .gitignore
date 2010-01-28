@@ -1,0 +1,8 @@
+ContestAppletProd.jnlp
+plugin
+tcblog.pl
+a.out
+log
+*.bak
+*~
+plugin/modify_TZTester/build/contestapplet
