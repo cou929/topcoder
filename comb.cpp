@@ -41,7 +41,7 @@ vector <int> split(const string _s, const string del) {
       sub = s.substr(0, pos);
       ret.push_back(toInt(sub));
       if (pos != string::npos)
-	pos += del.size();
+        pos += del.size();
       s.erase(0, pos);
     }
 

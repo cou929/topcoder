@@ -14,11 +14,14 @@
 #include <cctype>
 #include <queue>
 #include <stack>
+// BEGIN CUT HERE
+#include "cout.hpp"
+// END CUT HERE 
 using namespace std;
 class PenLift {
 public:
   int numTimes(vector <string> segments, int n) {
-    int ret;
+    int ret = 0;
 
     return ret;
   }
@@ -31,7 +34,10 @@ public:
     if ((Case == -1) || (Case == 2)) test_case_2();
     if ((Case == -1) || (Case == 3)) test_case_3();
     if ((Case == -1) || (Case == 4)) test_case_4();
-    if ((Case == -1) || (Case == 5)) test_case_5();}
+    if ((Case == -1) || (Case == 5)) test_case_5();
+    if ((Case == -1) || (Case == 6)) test_case_6();
+    if ((Case == -1) || (Case == 7)) test_case_7();
+  }
 private:
 	template <typename T> string print_array(const vector<T> &V) { ostringstream os; os << "{ "; for (typename vector<T>::const_iterator iter = V.begin(); iter != V.end(); ++iter) os << '\"' << *iter << "\","; os << " }"; return os.str(); }
 	void verify_case(int Case, const int &Expected, const int &Received) { cerr << "Test Case #" << Case << "..."; if (Expected == Received) cerr << "PASSED" << endl; else { cerr << "FAILED" << endl; cerr << "\tExpected: \"" << Expected << '\"' << endl; cerr << "\tReceived: \"" << Received << '\"' << endl; } }
@@ -103,6 +109,18 @@ private:
     int Arg1 = 824759; 
     int Arg2 = 19; 
     verify_case(5, Arg2, numTimes(Arg0, Arg1)); }
+	void test_case_6() { 
+    string Arr0[] = {"-10 0 10 0","0 -10 0 10"}; 
+    vector <string> Arg0(Arr0, Arr0 + (sizeof(Arr0) / sizeof(Arr0[0]))); 
+    int Arg1 = 1; 
+    int Arg2 = 1; 
+    verify_case(6, Arg2, numTimes(Arg0, Arg1)); }
+	void test_case_7() { 
+    string Arr0[] = {"-10 0 10 0","0 -10 0 10"}; 
+    vector <string> Arg0(Arr0, Arr0 + (sizeof(Arr0) / sizeof(Arr0[0]))); 
+    int Arg1 = 1; 
+    int Arg2 = 1; 
+    verify_case(7, Arg2, numTimes(Arg0, Arg1)); }
 
   // END CUT HERE
 
