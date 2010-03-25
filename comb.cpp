@@ -214,13 +214,11 @@ int factorial(int n)
   return ret;
 }
 
-int combination2(int n, int r)
-{
+int combination2(int n, int r) {
   return factorial(n) / factorial(n-r) / factorial(r);
 }
 
-bool isPrime(int n)
-{
+bool isPrime(int n) {
   if (n < 2)
     return false;
 
@@ -236,8 +234,7 @@ bool isPrime(int n)
   return true;
 }
 
-bool isPrime2(int x)
-{
+bool isPrime2(int x) {
   for(int i = 2; i * i <= x; i++)
     if(x % i == 0)
       return false;
