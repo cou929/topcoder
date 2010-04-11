@@ -1,0 +1,26 @@
+2
+3
+(0.5
+  ( 1.000)
+  (0.5 ))
+2
+anteater 1 cool
+cockroach 0
+13
+(0.2 furry
+  (0.81 fast
+    (0.3)
+    (0.2)
+  )
+  (0.1 fishy
+    (0.3 freshwater
+      (0.01)
+      (0.01)
+    )
+    (0.1)
+  )
+)
+3
+beaver 2 furry freshwater
+trout 4 fast freshwater fishy rainbowy
+dodo 1 extinct

@@ -1,0 +1,88 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+# ===============
+# parse arguments
+# ===============
+
+# how to get argv[0]
+my $className = shift or die("Useage: ./boot [classname]\n");
+
+# ===============
+# print code
+# ===============
+
+print <<'END';
+#include <sstream>
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <utility>
+#include <set>
+#include <cctype>
+#include <queue>
+#include <stack>
+#include <fstream>
+
+using namespace std;
+END
+
+print "class $className\n";
+
+print <<'END';
+{
+public:
+  string run(vector <int> inputs)
+  {
+    string ret;
+
+    return ret;
+  }
+}
+
+
+int main(int argc, char ** argv)
+{
+  if (argc != 2 && argc != 3)
+  {
+    cout << "Usage " << argv[0] << " [input file name] [output file name]\n";
+    return 0;
+  }
+END
+
+  print '  ', $className, ' * _test = new ', $className, "\n";
+
+print <<'END';
+  string line;
+  ifstream inFile (argv[1]);
+  if (argc == 3)
+    ifstream outFile (argv[2]);
+  int lineNumber = 1;
+
+  while (!inFile.eof())
+    {
+      vector <string> inputs;
+      getline(inFile, line);
+      inputs = split(line, " ");
+
+      if (inputs.size() != 0)
+	cout << "Reserved: " << _test->run(inputs) << endl;
+
+      if (argc == 3)
+      {
+        line = "";
+        getline(outFile, line);
+	cout << "Expected: " << line << endl;
+      }
+    }
+
+  return 0;
+}
+END

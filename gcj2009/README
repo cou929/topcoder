@@ -1,0 +1,14 @@
+Google Code Jam 2009 answers
+Kosei Moriyama <cou929@gmail.com>
+
+./boot
+        Bootstrup script for gcj. Usage is:
+        ./boot <problem name> <path>
+        Ex., if you type
+        % ./boot test_problem .
+        then directory "test_problem" is made on . and cpp skelton file 
+        "test_problem.cpp" and test input file "testinput" are generated 
+        into "test_problem" directory.
+
+./each directory
+        Answers of gcj 2009

@@ -1,0 +1,75 @@
+diff --git a/qualification/welcomeToCodeJam/a.out b/qualification/welcomeToCodeJam/a.out
+index ad3607f..6b9ec55 100755
+Binary files a/qualification/welcomeToCodeJam/a.out and b/qualification/welcomeToCodeJam/a.out differ
+diff --git a/qualification/welcomeToCodeJam/welcomeToCodeJam.cpp b/qualification/welcomeToCodeJam/welcomeToCodeJam.cpp
+index 1bef757..b9378bb 100644
+--- a/qualification/welcomeToCodeJam/welcomeToCodeJam.cpp
++++ b/qualification/welcomeToCodeJam/welcomeToCodeJam.cpp
+@@ -17,6 +17,7 @@
+ using namespace std;
+ 
+ int toInt(string s) {int r = 0; istringstream ss(s); ss >> r; return r;}
++string toStr(int n) {ostringstream ss; ss << n; return ss.str();}
+ 
+ vector <string> split(const string _s, const string del)
+ {
+@@ -39,11 +40,11 @@ vector <string> split(const string _s, const string del)
+ 
+ string welcome = "welcome to code jam";
+ string paragpeph;
+-double memo[501][20];
++int memo[501][20];
+ 
+-double r(int iParagraph, int iWelcome)
++int r(int iParagraph, int iWelcome)
+ {
+-  double ret = 0.0;
++  int ret = 0.0;
+ 
+   if (memo[iParagraph][iWelcome] != -1.0)
+     return memo[iParagraph][iWelcome];
+@@ -55,30 +56,18 @@ double r(int iParagraph, int iWelcome)
+       else
+ 	ret += r(i+1, iWelcome+1);
+ 
++  ret = ret % 10000;
++
+   memo[iParagraph][iWelcome] = ret;
+     
+   return ret;
+ }
+ 
+-string getResult(double d)
+-{
+-  string ret(4, '0');
+-  char c[1000];
+-  string cs;
+-
+-  sprintf(c, "%.0f", d);
+-  cs = c;
+-
+-  for (int i=0; i<cs.size() && i<4; i++)
+-    ret[3-i] = cs[cs.size()-1-i];
+-
+-  return ret;
+-}
+-
+ string getCount(string s)
+ {
+   string ret;
+-  double count;
++  int count;
++  char c[10];
+   paragpeph = s;
+   for (int i=0; i<501; i++)
+     for (int j=0; j<20; j++)
+@@ -86,7 +75,8 @@ string getCount(string s)
+ 
+   count = r(0, 0);
+ 
+-  ret = getResult(count);
++  sprintf(c, "%04d", count);
++  ret = c;
+ 
+   return ret;
+ }
