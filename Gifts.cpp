@@ -74,16 +74,35 @@ public:
 
   int maxGifts(vector <string> city, int T) {
     int ret = 0;
+    int i, j, k;;
 
     vector <pair <int, int> > positions = setPositions(city);
     vector <vector <int> > graph = constructGraph(city, positions);
 
-    int graphSize = graph.size();
-    int dp[1 << graphSize][graphSize];
-    queue <int> q;
+    int gifts = graph.size() - 2;
+    int dp[1 << gifts][gifts];
     memset(dp, INT_MAX, sizeof(dp));
 
+    for (i=0; i<gifts; i++)
+      dp[1 << i][i] = graph[0][i+2];
 
+    for (i=0; i<1 << gifts; i++) {
+      int g = __builtin_popcount(i);
+      if (dp[i][j] < INT_MAX)
+        for (j=0; j<gifts; j++)
+          if (dp[j][k] < INT_MAX)
+            if (!(i & (1 << j)))
+              for (k=0; k<gifts; k++)
+                dp[i][j] = min(dp[i][j], dp[i][j] + graph[j+2][k+2] * (g + 1));
+    }
+
+    for (i=0; i<1 << gifts; i++) {
+      int g = __builtin_popcount(i);
+      for (j=0; j<gifts; j++)
+        if (dp[i][j] < INT_MAX && graph[1][j+2] < INT_MAX && dp[i][j] + graph[1][j+2] * (g + 1) <= T) {
+          ret = max(ret, g);
+        }
+    }
 
     return ret;
   }
