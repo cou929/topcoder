@@ -1,0 +1,637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+    
+    <head>
+        <title>Cytoscape Web example</title>
+        
+        <script type="text/javascript" src="js/min/json2.min.js"></script>
+        <script type="text/javascript" src="js/min/AC_OETags.min.js"></script>
+        <script type="text/javascript" src="js/min/cytoscapeweb.min.js"></script>
+        
+        <script type="text/javascript">
+            window.onload = function() {
+                // id of Cytoscape Web container div
+                var div_id = "cytoscapeweb";
+                
+                // NOTE the attributes on nodes and edges
+                var xml = '\
+                <graphml>\
+                  <key id="label" for="all" attr.name="label" attr.type="string"/>\
+                  <key id="foo" for="node" attr.name="foo" attr.type="string"/>\
+                  <key id="bar" for="edge" attr.name="bar" attr.type="string"/>\
+                  <graph edgedefault="directed">\
+                    <node id="1"><data key="label">ajnghpjk</data></node>\
+                    <node id="2"><data key="label">kcqimtfxs</data></node>\
+                    <node id="3"><data key="label">kmzfvq</data></node>\
+                    <node id="4"><data key="label">kjqattuor</data></node>\
+                    <node id="5"><data key="label">slmilghoq</data></node>\
+                    <node id="6"><data key="label">sypqxxmzvgr</data></node>\
+                    <node id="7"><data key="label">soqiey</data></node>\
+                    <node id="8"><data key="label">qzebr</data></node>\
+                    <node id="9"><data key="label">qctwyihy</data></node>\
+                    <node id="10"><data key="label">qfefta</data></node>\
+                    <node id="11"><data key="label">rcgllxfy</data></node>\
+                    <node id="12"><data key="label">rhqla</data></node>\
+                    <node id="13"><data key="label">remejlgee</data></node>\
+                    <node id="14"><data key="label">ywczhdswa</data></node>\
+                    <node id="15"><data key="label">yfeisve</data></node>\
+                    <node id="16"><data key="label">yyzhx</data></node>\
+                    <node id="17"><data key="label">avkvvve</data></node>\
+                    <node id="18"><data key="label">azjmurhsyrx</data></node>\
+                    <node id="19"><data key="label">aertbhsnou</data></node>\
+                    <node id="20"><data key="label">eqlhmrwkx</data></node>\
+                    <node id="21"><data key="label">eqrjqvu</data></node>\
+                    <node id="22"><data key="label">eperk</data></node>\
+                    <node id="23"><data key="label">xpbcbqu</data></node>\
+                    <node id="24"><data key="label">xeoszilk</data></node>\
+                    <node id="25"><data key="label">xbuxs</data></node>\
+                    <node id="26"><data key="label">uykhdhrjvk</data></node>\
+                    <node id="27"><data key="label">ufytbmbkjs</data></node>\
+                    <node id="28"><data key="label">ulakdyq</data></node>\
+                    <node id="29"><data key="label">kyyrxufmun</data></node>\
+                    <node id="30"><data key="label">nuolvnpcg</data></node>\
+                    <node id="31"><data key="label">nxcbmwmugj</data></node>\
+                    <node id="32"><data key="label">nscctrprpl</data></node>\
+                    <node id="33"><data key="label">sqnni</data></node>\
+                    <node id="34"><data key="label">ixuauo</data></node>\
+                    <node id="35"><data key="label">infiqgb</data></node>\
+                    <node id="36"><data key="label">inndmebup</data></node>\
+                    <node id="37"><data key="label">qiftdm</data></node>\
+                    <node id="38"><data key="label">mqduvncctff</data></node>\
+                    <node id="39"><data key="label">myeerlv</data></node>\
+                    <node id="40"><data key="label">mdlffijw</data></node>\
+                    <node id="41"><data key="label">rxmsdkzn</data></node>\
+                    <node id="42"><data key="label">yvcbji</data></node>\
+                    <node id="43"><data key="label">abqdgzm</data></node>\
+                    <node id="44"><data key="label">epwhkn</data></node>\
+                    <node id="45"><data key="label">xnefdtsyi</data></node>\
+                    <node id="46"><data key="label">unbkm</data></node>\
+                    <node id="47"><data key="label">gybaualmtdo</data></node>\
+                    <node id="48"><data key="label">glsqf</data></node>\
+                    <node id="49"><data key="label">gjhlyguj</data></node>\
+                    <node id="50"><data key="label">gwsrxgwqb</data></node>\
+                    <node id="51"><data key="label">gglmdjgaxv</data></node>\
+                    <node id="52"><data key="label">gopwcfbyel</data></node>\
+                    <node id="53"><data key="label">gmtap</data></node>\
+                    <node id="54"><data key="label">gtylw</data></node>\
+                    <node id="55"><data key="label">gvsbyqjt</data></node>\
+                    <node id="56"><data key="label">ghtgpd</data></node>\
+                    <node id="57"><data key="label">gmlgmjlpyc</data></node>\
+                    <node id="58"><data key="label">ovjhyg</data></node>\
+                    <node id="59"><data key="label">obaardcslif</data></node>\
+                    <node id="60"><data key="label">opfuj</data></node>\
+                    <node id="61"><data key="label">oecffb</data></node>\
+                    <node id="62"><data key="label">oqcdtgxmv</data></node>\
+                    <node id="63"><data key="label">oultznl</data></node>\
+                    <node id="64"><data key="label">opslsp</data></node>\
+                    <node id="65"><data key="label">ovhcijvefw</data></node>\
+                    <node id="66"><data key="label">oiqqjamnoft</data></node>\
+                    <node id="67"><data key="label">orthped</data></node>\
+                    <node id="68"><data key="label">oocldc</data></node>\
+                    <node id="69"><data key="label">ftraryg</data></node>\
+                    <node id="70"><data key="label">fzdgszxlo</data></node>\
+                    <node id="71"><data key="label">fnfgj</data></node>\
+                    <node id="72"><data key="label">fpcziyb</data></node>\
+                    <node id="73"><data key="label">fbmsv</data></node>\
+                    <node id="74"><data key="label">fbaolursl</data></node>\
+                    <node id="75"><data key="label">fhqbmfiqdp</data></node>\
+                    <node id="76"><data key="label">fufiwithtw</data></node>\
+                    <node id="77"><data key="label">fgsdotwwt</data></node>\
+                    <node id="78"><data key="label">flugtwdd</data></node>\
+                    <node id="79"><data key="label">fftixgc</data></node>\
+                    <node id="80"><data key="label">jlghsdxkg</data></node>\
+                    <node id="81"><data key="label">jxfgho</data></node>\
+                    <node id="82"><data key="label">jhxytblyf</data></node>\
+                    <node id="83"><data key="label">jujacfeelqb</data></node>\
+                    <node id="84"><data key="label">jgnqthhv</data></node>\
+                    <node id="85"><data key="label">jugupvil</data></node>\
+                    <node id="86"><data key="label">jbcgweipdvp</data></node>\
+                    <node id="87"><data key="label">jzjew</data></node>\
+                    <node id="88"><data key="label">jolat</data></node>\
+                    <node id="89"><data key="label">jaegejdd</data></node>\
+                    <node id="90"><data key="label">joswzc</data></node>\
+                    <node id="91"><data key="label">biprkjczxkg</data></node>\
+                    <node id="92"><data key="label">bhfuo</data></node>\
+                    <node id="93"><data key="label">bndhtwpupf</data></node>\
+                    <node id="94"><data key="label">befbmyedj</data></node>\
+                    <node id="95"><data key="label">brmmcv</data></node>\
+                    <node id="96"><data key="label">blkwortntl</data></node>\
+                    <node id="97"><data key="label">brdtwgmp</data></node>\
+                    <node id="98"><data key="label">bdynnhakkow</data></node>\
+                    <node id="99"><data key="label">bbujt</data></node>\
+                    <node id="100"><data key="label">bjpdd</data></node>\
+                    <node id="101"><data key="label">bdkditc</data></node>\
+                    <node id="102"><data key="label">vcjnedug</data></node>\
+                    <node id="103"><data key="label">vbasjrso</data></node>\
+                    <node id="104"><data key="label">voovypjf</data></node>\
+                    <node id="105"><data key="label">vxqixyj</data></node>\
+                    <node id="106"><data key="label">vznasb</data></node>\
+                    <node id="107"><data key="label">vvzbnfyqskl</data></node>\
+                    <node id="108"><data key="label">vlilgjmp</data></node>\
+                    <node id="109"><data key="label">vjauew</data></node>\
+                    <node id="110"><data key="label">vejtrhicwht</data></node>\
+                    <node id="111"><data key="label">vbbsswnshd</data></node>\
+                    <node id="112"><data key="label">vdvqdfnc</data></node>\
+                    <node id="113"><data key="label">lvfug</data></node>\
+                    <node id="114"><data key="label">lglyjvlo</data></node>\
+                    <node id="115"><data key="label">lfhwyxpnqvf</data></node>\
+                    <node id="116"><data key="label">lvkmtuzej</data></node>\
+                    <node id="117"><data key="label">lajub</data></node>\
+                    <node id="118"><data key="label">ldgfv</data></node>\
+                    <node id="119"><data key="label">lfzthkmp</data></node>\
+                    <node id="120"><data key="label">lognzytdw</data></node>\
+                    <node id="121"><data key="label">lahugtilmt</data></node>\
+                    <node id="122"><data key="label">lmvewwvdd</data></node>\
+                    <node id="123"><data key="label">lagtnijc</data></node>\
+                    <node id="124"><data key="label">prluoqmyeg</data></node>\
+                    <node id="125"><data key="label">pkhvoynicbo</data></node>\
+                    <node id="126"><data key="label">pqgkhkidrf</data></node>\
+                    <node id="127"><data key="label">pmbfnj</data></node>\
+                    <node id="128"><data key="label">paaujzvob</data></node>\
+                    <node id="129"><data key="label">pwfwtv</data></node>\
+                    <node id="130"><data key="label">pbrhdol</data></node>\
+                    <node id="131"><data key="label">ptakyw</data></node>\
+                    <node id="132"><data key="label">pmvtfjkumt</data></node>\
+                    <node id="133"><data key="label">pzgjzd</data></node>\
+                    <node id="134"><data key="label">plvqc</data></node>\
+                    <node id="135"><data key="label">wnakyneyg</data></node>\
+                    <node id="136"><data key="label">wzlymoeoko</data></node>\
+                    <node id="137"><data key="label">wqnpvvaf</data></node>\
+                    <node id="138"><data key="label">wsivgj</data></node>\
+                    <node id="139"><data key="label">wvxkotlnbub</data></node>\
+                    <node id="140"><data key="label">wubgfv</data></node>\
+                    <node id="141"><data key="label">wkdjrcyqgdl</data></node>\
+                    <node id="142"><data key="label">wwbmbnphp</data></node>\
+                    <node id="143"><data key="label">wmcknt</data></node>\
+                    <node id="144"><data key="label">wjwwnhd</data></node>\
+                    <node id="145"><data key="label">wvvnaupc</data></node>\
+                    <node id="146"><data key="label">tjeioanlgg</data></node>\
+                    <node id="147"><data key="label">tczpfo</data></node>\
+                    <node id="148"><data key="label">tsjhemif</data></node>\
+                    <node id="149"><data key="label">tqsgkj</data></node>\
+                    <node id="150"><data key="label">tteib</data></node>\
+                    <node id="151"><data key="label">tzichtdypcv</data></node>\
+                    <node id="152"><data key="label">tdrljvl</data></node>\
+                    <node id="153"><data key="label">tkatfwmqp</data></node>\
+                    <node id="154"><data key="label">tbdoihozw</data></node>\
+                    <node id="155"><data key="label">tdrxtsgd</data></node>\
+                    <node id="156"><data key="label">tjxybxxc</data></node>\
+                    <node id="157"><data key="label">dzjsqpbg</data></node>\
+                    <node id="158"><data key="label">dwainnqxlwo</data></node>\
+                    <node id="159"><data key="label">dkemhuuguf</data></node>\
+                    <node id="160"><data key="label">dwyervfbej</data></node>\
+                    <node id="161"><data key="label">dlkdsvoqb</data></node>\
+                    <node id="162"><data key="label">dhbncblv</data></node>\
+                    <node id="163"><data key="label">deunjbl</data></node>\
+                    <node id="164"><data key="label">dcwpp</data></node>\
+                    <node id="165"><data key="label">dicdpzw</data></node>\
+                    <node id="166"><data key="label">dcxit</data></node>\
+                    <node id="167"><data key="label">dpdjjc</data></node>\
+                    <node id="168"><data key="label">cnhtg</data></node>\
+                    <node id="169"><data key="label">ccrto</data></node>\
+                    <node id="170"><data key="label">chzhdif</data></node>\
+                    <node id="171"><data key="label">cmkqyqgej</data></node>\
+                    <node id="172"><data key="label">crtdnwb</data></node>\
+                    <node id="173"><data key="label">clbkcfv</data></node>\
+                    <node id="174"><data key="label">cwdgosrl</data></node>\
+                    <node id="175"><data key="label">cyicelykp</data></node>\
+                    <node id="176"><data key="label">ckzvww</data></node>\
+                    <node id="177"><data key="label">cqtqteiseit</data></node>\
+                    <node id="178"><data key="label">cxjigyind</data></node>\
+                    <node id="179"><data key="label">tnmpsk</data></node>\
+                    <node id="180"><data key="label">tmehlr</data></node>\
+                    <node id="181"><data key="label">tdapje</data></node>\
+                    <node id="182"><data key="label">dcufljlks</data></node>\
+                    <node id="183"><data key="label">drqogvxhy</data></node>\
+                    <node id="184"><data key="label">dxgyix</data></node>\
+                    <node id="185"><data key="label">ccreofpnq</data></node>\
+                    <node id="186"><data key="label">cojntfnuhra</data></node>\
+                    <node id="187"><data key="label">crclfhu</data></node>\
+                    <node id="1"><data key="label">ajnghpjk</data></node>\
+                    <node id="2">ajnghpjk</node>\
+                    <edge target="2" source="1"></edge>\
+                    <node id="3">kcqimtfxs</node>\
+                    <edge target="3" source="2"></edge>\
+                    <node id="4">slmilghoq</node>\
+                    <edge target="4" source="3"></edge>\
+                    <node id="10000000"><data key="label">GOAL</data></node>\
+                    <edge target="10000000" source="4"></edge>\
+                    <node id="5">slmilghoq</node>\
+                    <edge target="5" source="3"></edge>\
+                    <node id="10000001"><data key="label">GOAL</data></node>\
+                    <edge target="10000001" source="5"></edge>\
+                    <node id="6">slmilghoq</node>\
+                    <edge target="6" source="3"></edge>\
+                    <node id="10000002"><data key="label">GOAL</data></node>\
+                    <edge target="10000002" source="6"></edge>\
+                    <node id="7">slmilghoq</node>\
+                    <edge target="7" source="3"></edge>\
+                    <node id="10000003"><data key="label">GOAL</data></node>\
+                    <edge target="10000003" source="7"></edge>\
+                    <node id="8">kcqimtfxs</node>\
+                    <edge target="8" source="2"></edge>\
+                    <node id="9">sypqxxmzvgr</node>\
+                    <edge target="9" source="8"></edge>\
+                    <node id="10000004"><data key="label">GOAL</data></node>\
+                    <edge target="10000004" source="9"></edge>\
+                    <node id="10">sypqxxmzvgr</node>\
+                    <edge target="10" source="8"></edge>\
+                    <node id="10000005"><data key="label">GOAL</data></node>\
+                    <edge target="10000005" source="10"></edge>\
+                    <node id="11">sypqxxmzvgr</node>\
+                    <edge target="11" source="8"></edge>\
+                    <node id="10000006"><data key="label">GOAL</data></node>\
+                    <edge target="10000006" source="11"></edge>\
+                    <node id="12">sypqxxmzvgr</node>\
+                    <edge target="12" source="8"></edge>\
+                    <node id="10000007"><data key="label">GOAL</data></node>\
+                    <edge target="10000007" source="12"></edge>\
+                    <node id="13">kcqimtfxs</node>\
+                    <edge target="13" source="2"></edge>\
+                    <node id="14">soqiey</node>\
+                    <edge target="14" source="13"></edge>\
+                    <node id="10000008"><data key="label">GOAL</data></node>\
+                    <edge target="10000008" source="14"></edge>\
+                    <node id="15">soqiey</node>\
+                    <edge target="15" source="13"></edge>\
+                    <node id="10000009"><data key="label">GOAL</data></node>\
+                    <edge target="10000009" source="15"></edge>\
+                    <node id="16">soqiey</node>\
+                    <edge target="16" source="13"></edge>\
+                    <node id="10000010"><data key="label">GOAL</data></node>\
+                    <edge target="10000010" source="16"></edge>\
+                    <node id="17">soqiey</node>\
+                    <edge target="17" source="13"></edge>\
+                    <node id="10000011"><data key="label">GOAL</data></node>\
+                    <edge target="10000011" source="17"></edge>\
+                    <node id="18">kcqimtfxs</node>\
+                    <edge target="18" source="2"></edge>\
+                    <node id="19">sqnni</node>\
+                    <edge target="19" source="18"></edge>\
+                    <node id="10000012"><data key="label">GOAL</data></node>\
+                    <edge target="10000012" source="19"></edge>\
+                    <node id="20">sqnni</node>\
+                    <edge target="20" source="18"></edge>\
+                    <node id="10000013"><data key="label">GOAL</data></node>\
+                    <edge target="10000013" source="20"></edge>\
+                    <node id="21">sqnni</node>\
+                    <edge target="21" source="18"></edge>\
+                    <node id="10000014"><data key="label">GOAL</data></node>\
+                    <edge target="10000014" source="21"></edge>\
+                    <node id="22">ajnghpjk</node>\
+                    <edge target="22" source="1"></edge>\
+                    <node id="23">kmzfvq</node>\
+                    <edge target="23" source="22"></edge>\
+                    <node id="24">qzebr</node>\
+                    <edge target="24" source="23"></edge>\
+                    <node id="10000015"><data key="label">GOAL</data></node>\
+                    <edge target="10000015" source="24"></edge>\
+                    <node id="25">qzebr</node>\
+                    <edge target="25" source="23"></edge>\
+                    <node id="10000016"><data key="label">GOAL</data></node>\
+                    <edge target="10000016" source="25"></edge>\
+                    <node id="26">qzebr</node>\
+                    <edge target="26" source="23"></edge>\
+                    <node id="10000017"><data key="label">GOAL</data></node>\
+                    <edge target="10000017" source="26"></edge>\
+                    <node id="27">qzebr</node>\
+                    <edge target="27" source="23"></edge>\
+                    <node id="10000018"><data key="label">GOAL</data></node>\
+                    <edge target="10000018" source="27"></edge>\
+                    <node id="28">kmzfvq</node>\
+                    <edge target="28" source="22"></edge>\
+                    <node id="29">qctwyihy</node>\
+                    <edge target="29" source="28"></edge>\
+                    <node id="10000019"><data key="label">GOAL</data></node>\
+                    <edge target="10000019" source="29"></edge>\
+                    <node id="30">qctwyihy</node>\
+                    <edge target="30" source="28"></edge>\
+                    <node id="10000020"><data key="label">GOAL</data></node>\
+                    <edge target="10000020" source="30"></edge>\
+                    <node id="31">qctwyihy</node>\
+                    <edge target="31" source="28"></edge>\
+                    <node id="10000021"><data key="label">GOAL</data></node>\
+                    <edge target="10000021" source="31"></edge>\
+                    <node id="32">qctwyihy</node>\
+                    <edge target="32" source="28"></edge>\
+                    <node id="10000022"><data key="label">GOAL</data></node>\
+                    <edge target="10000022" source="32"></edge>\
+                    <node id="33">kmzfvq</node>\
+                    <edge target="33" source="22"></edge>\
+                    <node id="34">qfefta</node>\
+                    <edge target="34" source="33"></edge>\
+                    <node id="10000023"><data key="label">GOAL</data></node>\
+                    <edge target="10000023" source="34"></edge>\
+                    <node id="35">qfefta</node>\
+                    <edge target="35" source="33"></edge>\
+                    <node id="10000024"><data key="label">GOAL</data></node>\
+                    <edge target="10000024" source="35"></edge>\
+                    <node id="36">qfefta</node>\
+                    <edge target="36" source="33"></edge>\
+                    <node id="10000025"><data key="label">GOAL</data></node>\
+                    <edge target="10000025" source="36"></edge>\
+                    <node id="37">qfefta</node>\
+                    <edge target="37" source="33"></edge>\
+                    <node id="10000026"><data key="label">GOAL</data></node>\
+                    <edge target="10000026" source="37"></edge>\
+                    <node id="38">kmzfvq</node>\
+                    <edge target="38" source="22"></edge>\
+                    <node id="39">qiftdm</node>\
+                    <edge target="39" source="38"></edge>\
+                    <node id="10000027"><data key="label">GOAL</data></node>\
+                    <edge target="10000027" source="39"></edge>\
+                    <node id="40">qiftdm</node>\
+                    <edge target="40" source="38"></edge>\
+                    <node id="10000028"><data key="label">GOAL</data></node>\
+                    <edge target="10000028" source="40"></edge>\
+                    <node id="41">qiftdm</node>\
+                    <edge target="41" source="38"></edge>\
+                    <node id="10000029"><data key="label">GOAL</data></node>\
+                    <edge target="10000029" source="41"></edge>\
+                    <node id="42">ajnghpjk</node>\
+                    <edge target="42" source="1"></edge>\
+                    <node id="43">kjqattuor</node>\
+                    <edge target="43" source="42"></edge>\
+                    <node id="44">rcgllxfy</node>\
+                    <edge target="44" source="43"></edge>\
+                    <node id="10000030"><data key="label">GOAL</data></node>\
+                    <edge target="10000030" source="44"></edge>\
+                    <node id="45">rcgllxfy</node>\
+                    <edge target="45" source="43"></edge>\
+                    <node id="10000031"><data key="label">GOAL</data></node>\
+                    <edge target="10000031" source="45"></edge>\
+                    <node id="46">rcgllxfy</node>\
+                    <edge target="46" source="43"></edge>\
+                    <node id="10000032"><data key="label">GOAL</data></node>\
+                    <edge target="10000032" source="46"></edge>\
+                    <node id="47">rcgllxfy</node>\
+                    <edge target="47" source="43"></edge>\
+                    <node id="10000033"><data key="label">GOAL</data></node>\
+                    <edge target="10000033" source="47"></edge>\
+                    <node id="48">kjqattuor</node>\
+                    <edge target="48" source="42"></edge>\
+                    <node id="49">rhqla</node>\
+                    <edge target="49" source="48"></edge>\
+                    <node id="10000034"><data key="label">GOAL</data></node>\
+                    <edge target="10000034" source="49"></edge>\
+                    <node id="50">rhqla</node>\
+                    <edge target="50" source="48"></edge>\
+                    <node id="10000035"><data key="label">GOAL</data></node>\
+                    <edge target="10000035" source="50"></edge>\
+                    <node id="51">rhqla</node>\
+                    <edge target="51" source="48"></edge>\
+                    <node id="10000036"><data key="label">GOAL</data></node>\
+                    <edge target="10000036" source="51"></edge>\
+                    <node id="52">rhqla</node>\
+                    <edge target="52" source="48"></edge>\
+                    <node id="10000037"><data key="label">GOAL</data></node>\
+                    <edge target="10000037" source="52"></edge>\
+                    <node id="53">kjqattuor</node>\
+                    <edge target="53" source="42"></edge>\
+                    <node id="54">remejlgee</node>\
+                    <edge target="54" source="53"></edge>\
+                    <node id="10000038"><data key="label">GOAL</data></node>\
+                    <edge target="10000038" source="54"></edge>\
+                    <node id="55">remejlgee</node>\
+                    <edge target="55" source="53"></edge>\
+                    <node id="10000039"><data key="label">GOAL</data></node>\
+                    <edge target="10000039" source="55"></edge>\
+                    <node id="56">remejlgee</node>\
+                    <edge target="56" source="53"></edge>\
+                    <node id="10000040"><data key="label">GOAL</data></node>\
+                    <edge target="10000040" source="56"></edge>\
+                    <node id="57">remejlgee</node>\
+                    <edge target="57" source="53"></edge>\
+                    <node id="10000041"><data key="label">GOAL</data></node>\
+                    <edge target="10000041" source="57"></edge>\
+                    <node id="58">kjqattuor</node>\
+                    <edge target="58" source="42"></edge>\
+                    <node id="59">rxmsdkzn</node>\
+                    <edge target="59" source="58"></edge>\
+                    <node id="10000042"><data key="label">GOAL</data></node>\
+                    <edge target="10000042" source="59"></edge>\
+                    <node id="60">rxmsdkzn</node>\
+                    <edge target="60" source="58"></edge>\
+                    <node id="10000043"><data key="label">GOAL</data></node>\
+                    <edge target="10000043" source="60"></edge>\
+                    <node id="61">rxmsdkzn</node>\
+                    <edge target="61" source="58"></edge>\
+                    <node id="10000044"><data key="label">GOAL</data></node>\
+                    <edge target="10000044" source="61"></edge>\
+                    <node id="62">ajnghpjk</node>\
+                    <edge target="62" source="1"></edge>\
+                    <node id="63">kyyrxufmun</node>\
+                    <edge target="63" source="62"></edge>\
+                    <node id="64">nuolvnpcg</node>\
+                    <edge target="64" source="63"></edge>\
+                    <node id="10000045"><data key="label">GOAL</data></node>\
+                    <edge target="10000045" source="64"></edge>\
+                    <node id="65">nuolvnpcg</node>\
+                    <edge target="65" source="63"></edge>\
+                    <node id="10000046"><data key="label">GOAL</data></node>\
+                    <edge target="10000046" source="65"></edge>\
+                    <node id="66">nuolvnpcg</node>\
+                    <edge target="66" source="63"></edge>\
+                    <node id="10000047"><data key="label">GOAL</data></node>\
+                    <edge target="10000047" source="66"></edge>\
+                    <node id="67">nuolvnpcg</node>\
+                    <edge target="67" source="63"></edge>\
+                    <node id="10000048"><data key="label">GOAL</data></node>\
+                    <edge target="10000048" source="67"></edge>\
+                    <node id="68">nuolvnpcg</node>\
+                    <edge target="68" source="63"></edge>\
+                    <node id="10000049"><data key="label">GOAL</data></node>\
+                    <edge target="10000049" source="68"></edge>\
+                    <node id="69">nuolvnpcg</node>\
+                    <edge target="69" source="63"></edge>\
+                    <node id="10000050"><data key="label">GOAL</data></node>\
+                    <edge target="10000050" source="69"></edge>\
+                    <node id="70">nuolvnpcg</node>\
+                    <edge target="70" source="63"></edge>\
+                    <node id="10000051"><data key="label">GOAL</data></node>\
+                    <edge target="10000051" source="70"></edge>\
+                    <node id="71">nuolvnpcg</node>\
+                    <edge target="71" source="63"></edge>\
+                    <node id="10000052"><data key="label">GOAL</data></node>\
+                    <edge target="10000052" source="71"></edge>\
+                    <node id="72">nuolvnpcg</node>\
+                    <edge target="72" source="63"></edge>\
+                    <node id="10000053"><data key="label">GOAL</data></node>\
+                    <edge target="10000053" source="72"></edge>\
+                    <node id="73">nuolvnpcg</node>\
+                    <edge target="73" source="63"></edge>\
+                    <node id="10000054"><data key="label">GOAL</data></node>\
+                    <edge target="10000054" source="73"></edge>\
+                    <node id="74">nuolvnpcg</node>\
+                    <edge target="74" source="63"></edge>\
+                    <node id="10000055"><data key="label">GOAL</data></node>\
+                    <edge target="10000055" source="74"></edge>\
+                    <node id="75">kyyrxufmun</node>\
+                    <edge target="75" source="62"></edge>\
+                    <node id="76">nxcbmwmugj</node>\
+                    <edge target="76" source="75"></edge>\
+                    <node id="10000056"><data key="label">GOAL</data></node>\
+                    <edge target="10000056" source="76"></edge>\
+                    <node id="77">nxcbmwmugj</node>\
+                    <edge target="77" source="75"></edge>\
+                    <node id="10000057"><data key="label">GOAL</data></node>\
+                    <edge target="10000057" source="77"></edge>\
+                    <node id="78">nxcbmwmugj</node>\
+                    <edge target="78" source="75"></edge>\
+                    <node id="10000058"><data key="label">GOAL</data></node>\
+                    <edge target="10000058" source="78"></edge>\
+                    <node id="79">nxcbmwmugj</node>\
+                    <edge target="79" source="75"></edge>\
+                    <node id="10000059"><data key="label">GOAL</data></node>\
+                    <edge target="10000059" source="79"></edge>\
+                    <node id="80">nxcbmwmugj</node>\
+                    <edge target="80" source="75"></edge>\
+                    <node id="10000060"><data key="label">GOAL</data></node>\
+                    <edge target="10000060" source="80"></edge>\
+                    <node id="81">nxcbmwmugj</node>\
+                    <edge target="81" source="75"></edge>\
+                    <node id="10000061"><data key="label">GOAL</data></node>\
+                    <edge target="10000061" source="81"></edge>\
+                    <node id="82">nxcbmwmugj</node>\
+                    <edge target="82" source="75"></edge>\
+                    <node id="10000062"><data key="label">GOAL</data></node>\
+                    <edge target="10000062" source="82"></edge>\
+                    <node id="83">nxcbmwmugj</node>\
+                    <edge target="83" source="75"></edge>\
+                    <node id="10000063"><data key="label">GOAL</data></node>\
+                    <edge target="10000063" source="83"></edge>\
+                    <node id="84">nxcbmwmugj</node>\
+                    <edge target="84" source="75"></edge>\
+                    <node id="10000064"><data key="label">GOAL</data></node>\
+                    <edge target="10000064" source="84"></edge>\
+                    <node id="85">nxcbmwmugj</node>\
+                    <edge target="85" source="75"></edge>\
+                    <node id="10000065"><data key="label">GOAL</data></node>\
+                    <edge target="10000065" source="85"></edge>\
+                    <node id="86">nxcbmwmugj</node>\
+                    <edge target="86" source="75"></edge>\
+                    <node id="10000066"><data key="label">GOAL</data></node>\
+                    <edge target="10000066" source="86"></edge>\
+                    <node id="87">kyyrxufmun</node>\
+                    <edge target="87" source="62"></edge>\
+                    <node id="88">nscctrprpl</node>\
+                    <edge target="88" source="87"></edge>\
+                    <node id="10000067"><data key="label">GOAL</data></node>\
+                    <edge target="10000067" source="88"></edge>\
+                    <node id="89">nscctrprpl</node>\
+                    <edge target="89" source="87"></edge>\
+                    <node id="10000068"><data key="label">GOAL</data></node>\
+                    <edge target="10000068" source="89"></edge>\
+                    <node id="90">nscctrprpl</node>\
+                    <edge target="90" source="87"></edge>\
+                    <node id="10000069"><data key="label">GOAL</data></node>\
+                    <edge target="10000069" source="90"></edge>\
+                    <node id="91">nscctrprpl</node>\
+                    <edge target="91" source="87"></edge>\
+                    <node id="10000070"><data key="label">GOAL</data></node>\
+                    <edge target="10000070" source="91"></edge>\
+                    <node id="92">nscctrprpl</node>\
+                    <edge target="92" source="87"></edge>\
+                    <node id="10000071"><data key="label">GOAL</data></node>\
+                    <edge target="10000071" source="92"></edge>\
+                    <node id="93">nscctrprpl</node>\
+                    <edge target="93" source="87"></edge>\
+                    <node id="10000072"><data key="label">GOAL</data></node>\
+                    <edge target="10000072" source="93"></edge>\
+                    <node id="94">nscctrprpl</node>\
+                    <edge target="94" source="87"></edge>\
+                    <node id="10000073"><data key="label">GOAL</data></node>\
+                    <edge target="10000073" source="94"></edge>\
+                    <node id="95">nscctrprpl</node>\
+                    <edge target="95" source="87"></edge>\
+                    <node id="10000074"><data key="label">GOAL</data></node>\
+                    <edge target="10000074" source="95"></edge>\
+                    <node id="96">nscctrprpl</node>\
+                    <edge target="96" source="87"></edge>\
+                    <node id="10000075"><data key="label">GOAL</data></node>\
+                    <edge target="10000075" source="96"></edge>\
+                    <node id="97">nscctrprpl</node>\
+                    <edge target="97" source="87"></edge>\
+                    <node id="10000076"><data key="label">GOAL</data></node>\
+                    <edge target="10000076" source="97"></edge>\
+                    <node id="98">nscctrprpl</node>\
+                    <edge target="98" source="87"></edge>\
+                    <node id="10000077"><data key="label">GOAL</data></node>\
+                    <edge target="10000077" source="98"></edge>\
+                  </graph>\
+                </graphml>\
+                ';
+                
+                // initialization options
+                var options = {
+                    swfPath: "swf/CytoscapeWeb",
+                    flashInstallerPath: "swf/playerProductInstall"
+                };
+                
+                var vis = new org.cytoscapeweb.Visualization(div_id, options);
+               
+                // callback when Cytoscape Web has finished drawing
+                vis.ready(function() {
+                
+                    // add a listener for when nodes and edges are clicked
+                    vis.addListener("click", "nodes", function(event) {
+                        handle_click(event);
+                    })
+                    .addListener("click", "edges", function(event) {
+                        handle_click(event);
+                    });
+                    
+                    function handle_click(event) {
+                         var target = event.target;
+                         
+                         clear();
+                         print("event.group = " + event.group);
+                         for (var i in target.data) {
+                            var variable_name = i;
+                            var variable_value = target.data[i];
+                            print( "event.target.data." + variable_name + " = " + variable_value );
+                         }
+                    }
+                    
+                    function clear() {
+                        document.getElementById("note").innerHTML = "";
+                    }
+                
+                    function print(msg) {
+                        document.getElementById("note").innerHTML += "<p>" + msg + "</p>";
+                    }
+                });
+
+                // draw options
+                var draw_options = {
+                    // your data goes here
+                    network: xml,
+                    // hide pan zoom
+                    panZoomControlVisible: true,
+                    layout: 'Tree'
+                };
+                
+                vis.draw(draw_options);
+            };
+        </script>
+        
+        <style>
+            * { margin: 0; padding: 0; font-family: Helvetica, Arial, Verdana, sans-serif; }
+            html, body { height: 100%; width: 100%; padding: 0; margin: 0; }
+            body { line-height: 1.5; color: #000000; font-size: 14px; }
+            /* The Cytoscape Web container must have its dimensions set. */
+            #cytoscapeweb { width: 3000px; height: 3000px; }
+            #note { width: 100%; height: 50%; background-color: #f0f0f0; overflow: auto;  }
+            p { padding: 0 0.5em; margin: 0; }
+            p:first-child { padding-top: 0.5em; }
+        </style>
+    </head>
+    
+    <body>
+        <div id="cytoscapeweb">
+            Cytoscape Web will replace the contents of this div with your graph.
+        </div>
+    </body>
+    
+</html>
+
