@@ -53,8 +53,8 @@ vector <string> run(vector <string> input)
       break;
 
     for (int i=0; i<4; i++) {
-      int nextx = curx + dirx[i];
-      int nexty = cury + diry[i];
+   int nextx = curx + dirx[i];
+   int nexty = cury + diry[i];
 
       if (0 <= nextx && nextx < input.size() && 0 <= nexty && nexty < input[0].size() &&
           come_from[nextx][nexty][0] == -1 && (input[nextx][nexty] != '*' && input[nextx][nexty] != 'S')) {
