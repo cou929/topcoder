@@ -283,19 +283,16 @@ public:
   }
 };
 
-vector <int> factor(const int n)
-{
+vector <int> factor(const int n) {
   vector <int> ret;
   int num = n;
 
-  for (int i=2; i*i<=n; i++)
-    {
-      while (num % i == 0)
-	{
-	  ret.push_back(i);
-	  num /= i;
-	}
+  for (int i=2; i*i<=n; i++) {
+    while (num % i == 0) {
+      ret.push_back(i);
+      num /= i;
     }
+  }
 
   if (num > 1)
     ret.push_back(num);
