@@ -6,3 +6,4 @@ log
 *.bak
 *~
 plugin/modify_TZTester/build/contestapplet
+*.pyc
