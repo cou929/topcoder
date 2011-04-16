@@ -1,8 +1,11 @@
 import math
 
 def is_prime(x):
+    if x == 2:
+        return True
+
     n = int(math.ceil(math.sqrt(x)))
-    for i in range(2, n):
+    for i in range(2, n + 1):
         if x % i == 0:
             return False
     return True
