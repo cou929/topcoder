@@ -14,3 +14,29 @@ def is_prime(x):
         if x % i == 0:
             return False
     return True
+
+def sieve(n):
+    if n <= 0:
+        return []
+
+    search_set = [True for x in xrange(n+1)]
+    prime_set = []
+
+    search_set[0] = search_set[1] = False
+
+    while search_set.count(True) > 0:
+        cur = search_set.index(True)
+        prime_set.append(cur)
+
+        if cur * cur > n:
+            for i in xrange(n+1):
+                if search_set[i]:
+                    prime_set.append(i)
+            break
+
+        num = cur
+        while num <= n:
+            search_set[num] = False
+            num += cur
+
+    return prime_set
