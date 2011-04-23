@@ -46,8 +46,10 @@ def get_proper_divs(n):
         raise Exception("Argument must be grater than 0")
 
     N = int(ceil(sqrt(n)))
+    N += 1 if (N * N == n) else 0
+
     divs = [1]
-    for i in range(2, N + 1):
+    for i in range(2, N):
         if n % i == 0:
             divs.append(i)
             if n / i != i:
