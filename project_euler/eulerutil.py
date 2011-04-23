@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-import math
+from math import ceil, sqrt
 
 def is_prime(x):
     if x <= 0:
@@ -10,7 +10,7 @@ def is_prime(x):
         return True
     if x % 2 == 0:
         return False
-    for i in range(3, int(math.ceil(math.sqrt(x))) + 1, 2):
+    for i in range(3, int(ceil(sqrt(x))) + 1, 2):
         if x % i == 0:
             return False
     return True
@@ -40,3 +40,17 @@ def sieve(n):
             num += cur
 
     return prime_set
+
+def get_proper_divs(n):
+    if n <= 0:
+        raise Exception("Argument must be grater than 0")
+
+    N = int(ceil(sqrt(n)))
+    divs = [1]
+    for i in range(2, N + 1):
+        if n % i == 0:
+            divs.append(i)
+            if n / i != i:
+                divs.append(n / i)
+    divs.sort()
+    return divs
