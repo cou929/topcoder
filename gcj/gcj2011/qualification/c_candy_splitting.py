@@ -1,8 +1,7 @@
-import math
-
 T = int(raw_input())
 seq = []
 ret = -1
+
 
 def calc(pat1, pat2, sum, n):
     global seq
@@ -20,7 +19,7 @@ for test_num in range(1, T + 1):
     ret = -1
     N = int(raw_input())
     seq = map(int, raw_input().split())
-    total = reduce(lambda x,y: x+y, seq)
+    total = reduce(lambda x, y: x + y, seq)
 
     for i in range(1, 2 ** N - 1):
         pat1 = 0

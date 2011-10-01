@@ -1,5 +1,3 @@
-import math
-
 T = int(raw_input())
 
 for test_num in range(1, T + 1):
